@@ -1,3 +1,5 @@
+package main;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -5,6 +7,15 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import com.toedter.calendar.JDateChooser;
+
+import db.dbConnection;
+import visual.ReportCreatorForm;
+import db.AddCustomerToDB;
+import db.FillComboBox;
+
+import db.SaveToDB;
+
+
 import javax.swing.JComboBox;
 import java.awt.Font;
 import java.sql.Connection;
