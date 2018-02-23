@@ -1,8 +1,6 @@
 package main;
 
 import visual.MainFrame;
-import visual.MainWindow;
-import visual.MainWindow;
 
 public class Main {
 

@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.SwingConstants;
@@ -20,6 +22,7 @@ import db.AddCustomerToDB;
 import db.FillComboBox;
 import db.SaveToDB;
 import db.dbConnection;
+import net.proteanit.sql.DbUtils;
 
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
@@ -29,6 +32,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.ScrollPane;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
 
 public class MainFrame extends JFrame {
 
@@ -52,6 +58,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	Connection connection = null;
+	private JTable table;
 
 	/**
 	 * Create the frame.
@@ -221,5 +228,34 @@ public class MainFrame extends JFrame {
 		JMenu mnHelp = new JMenu("Help");
 		mnHelp.setFont(new Font("Verdana", Font.PLAIN, 11));
 		menuBar.add(mnHelp);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 266, 925, 317);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		JButton btnLoadDataFrom = new JButton("Load data from BD");
+		btnLoadDataFrom.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					
+					String query = "Select * from Customers";
+					PreparedStatement pst = connection.prepareStatement(query);
+					ResultSet rs = pst.executeQuery();
+					
+					table.setModel(DbUtils.resultSetToTableModel(rs));
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+					JOptionPane.showMessageDialog(null, e);
+				}
+				
+			}
+		});
+		btnLoadDataFrom.setBounds(190, 224, 121, 23);
+		contentPane.add(btnLoadDataFrom);
 	}
 }
