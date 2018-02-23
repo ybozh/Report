@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="Libs/jcalendar/junit-4.6.jar"/>
 	<classpathentry kind="lib" path="Libs/poi-bin-3.17-20170915/poi-3.17/poi-3.17.jar"/>
 	<classpathentry kind="lib" path="Libs/sqlite-jdbc-3.21.0.jar"/>
+	<classpathentry kind="lib" path="Libs/rs2xml.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
