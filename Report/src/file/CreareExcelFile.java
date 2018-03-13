@@ -29,7 +29,7 @@ public class CreareExcelFile {
 		
 		Sheet sheet3 = wb.createSheet(WorkbookUtil.createSafeSheetName("?*:?*%:?%:"));
 		
-		FileOutputStream fos = new FileOutputStream("my.xls");
+		FileOutputStream fos = new FileOutputStream("my3.xls");
 		
 		wb.write(fos);
 		fos.close();

@@ -17,7 +17,9 @@ public class ReadExcelFile {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		FileInputStream fis = new FileInputStream("C:/Users/Bozhko/GitProjects/Report/read.xls");
+		String str = "C:/Users/Bozhko/GitProjects/Report/read.xls";
+		
+		FileInputStream fis = new FileInputStream(str);
 		Workbook wb = new HSSFWorkbook(fis);
 		
 //		String result = wb.getSheetAt(0).getRow(0).getCell(0).getStringCellValue();
@@ -25,7 +27,7 @@ public class ReadExcelFile {
 //		System.out.println(result);
 //		System.out.println(str);
 		
-		for (Row row : wb.getSheetAt(0)) {
+			for (Row row : wb.getSheetAt(0)) {
 			for (Cell cell : row) {
 				
 				CellReference cellRef = new CellReference(row.getRowNum(), cell.getColumnIndex());
@@ -70,7 +72,7 @@ public class ReadExcelFile {
         	result = " * ";
 		}
 		
-		return result;
+		return result;								
 		
 	}
 }
