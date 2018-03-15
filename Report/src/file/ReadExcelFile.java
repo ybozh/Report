@@ -1,6 +1,7 @@
 package file;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
@@ -17,7 +18,7 @@ public class ReadExcelFile {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		String str = "ReportTemplate.xls";
+		String str = "my5.xls";
 		
 		FileInputStream fis = new FileInputStream(str);
 		Workbook wb = new HSSFWorkbook(fis);
@@ -39,7 +40,17 @@ public class ReadExcelFile {
 			}
 		}
 		
-		fis.close();		
+		fis.close();
+		
+		
+		
+		
+		/*FileOutputStream fileOut = new FileOutputStream("my5.xls");
+	    wb.write(fileOut);
+	    fileOut.close();*/
+		
+		
+		
 
 	}
 	
