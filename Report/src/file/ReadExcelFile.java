@@ -45,9 +45,7 @@ public class ReadExcelFile {
 		
 		
 		
-		/*FileOutputStream fileOut = new FileOutputStream("my5.xls");
-	    wb.write(fileOut);
-	    fileOut.close();*/
+		
 		
 		
 		
