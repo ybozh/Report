@@ -17,7 +17,7 @@ public class ReadExcelFile {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		String str = "C:/Users/Bozhko/GitProjects/Report/read.xls";
+		String str = "ReportTemplate.xls";
 		
 		FileInputStream fis = new FileInputStream(str);
 		Workbook wb = new HSSFWorkbook(fis);

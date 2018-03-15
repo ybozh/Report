@@ -21,8 +21,10 @@ public class CreareExcelFile {
 		
 		Row row = sheet0.createRow(3);
 		Cell cell = row.createCell(4);
+		Cell cell1 = row.createCell(5);
 		
 		cell.setCellValue(25);
+		cell1.setCellValue(865);
 		
 		Sheet sheet1 = wb.createSheet(" ниги");
 		Sheet sheet2 = wb.createSheet("јвторы");
