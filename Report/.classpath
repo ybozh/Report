@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="Libs/barcode4j-2.1.0/build/barcode4j.jar"/>
 	<classpathentry kind="lib" path="Libs/itextpdf-5.1.0/itextpdf-5.1.0.jar"/>
 	<classpathentry kind="lib" path="Libs/poi-bin-3.17-20170915/poi-3.17/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="Libs/poi-bin-3.17-20170915/poi-3.17/lib/commons-collections4-4.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
