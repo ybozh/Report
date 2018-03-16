@@ -17,7 +17,7 @@ public class test {
 	
 	public static void main(String[] args) throws IOException, Exception, InvalidFormatException {
 
-		for (int i = 101; i<1000; i++) {
+		
 	 FileInputStream inp = new FileInputStream("my5.xls");
 	    //InputStream inp = new FileInputStream("workbook.xlsx");
 	 		 	
@@ -32,13 +32,13 @@ public class test {
 	    if (cell == null) 
 	        cell = row.createCell(cellIndex);
 	    cell.setCellType(CellType.STRING);
-	    cell.setCellValue("my" + i + ".xls");
+	    cell.setCellValue("my.xls");
 
 	    // Write the output to a file
-	    FileOutputStream fileOut = new FileOutputStream("my" + i + ".xls");
+	    FileOutputStream fileOut = new FileOutputStream("my.xls");
 	    wb.write(fileOut);
 	    fileOut.close();
-	 	}
+	 	
 	
 	}
 	
