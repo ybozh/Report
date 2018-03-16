@@ -11,30 +11,34 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.omg.CORBA.PUBLIC_MEMBER;
 
 public class test {
 	
 	public static void main(String[] args) throws IOException, Exception, InvalidFormatException {
 
-	
+		for (int i = 101; i<1000; i++) {
 	 FileInputStream inp = new FileInputStream("my5.xls");
 	    //InputStream inp = new FileInputStream("workbook.xlsx");
-
+	 		 	
 	    Workbook wb = WorkbookFactory.create(inp);
 	    Sheet sheet = wb.getSheetAt(0);
-	    Row row = sheet.getRow(1);
+	    final int rowIndex = 0;
+	    final int cellIndex = 0;
+	    Row row = sheet.getRow(rowIndex);
 	    if (row == null) 
-	        row = sheet.createRow(1);
-	    Cell cell = row.getCell(1);
+	        row = sheet.createRow(rowIndex);
+	    Cell cell = row.getCell(cellIndex);
 	    if (cell == null) 
-	        cell = row.createCell(1);
+	        cell = row.createCell(cellIndex);
 	    cell.setCellType(CellType.STRING);
-	    cell.setCellValue("a test");
+	    cell.setCellValue("my" + i + ".xls");
 
 	    // Write the output to a file
-	    FileOutputStream fileOut = new FileOutputStream("my7.xls");
+	    FileOutputStream fileOut = new FileOutputStream("my" + i + ".xls");
 	    wb.write(fileOut);
 	    fileOut.close();
+	 	}
 	
 	}
 	
