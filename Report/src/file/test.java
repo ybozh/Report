@@ -4,30 +4,26 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class test {
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, Exception, InvalidFormatException {
 
 		
-		FileInputStream inp = new FileInputStream("test.xls");
+		FileInputStream inp = new FileInputStream("my498.xls");
 	    //InputStream inp = new FileInputStream("workbook.xlsx");
-		
-		/*String str = "test.xls";
-		
-		FileInputStream fis = new FileInputStream(str);
-		Workbook wb = new HSSFWorkbook(fis);*/
 	 		 	
-		Workbook wb = new HSSFWorkbook(inp);
+	    Workbook wb = WorkbookFactory.create(inp);
 	    Sheet sheet = wb.getSheetAt(0);
-	    final int rowIndex = 2;
-	    final int cellIndex = 5;
+	    final int rowIndex = 1;
+	    final int cellIndex = 0;
 	    Row row = sheet.getRow(rowIndex);
 	    if (row == null) 
 	        row = sheet.createRow(rowIndex);
@@ -36,20 +32,10 @@ public class test {
 	        cell = row.createCell(cellIndex);
 	    cell.setCellType(CellType.STRING);
 	    cell.setCellValue("my.xls");
-		
-		/*Sheet sheet = wb.getSheetAt(0);
-		Row row = sheet.getRow(10);
-		Cell cell = row.getCell(0);
-		
-		System.out.println(cell);*/
-
-		
-		/*fis.close();*/
-		
-		
+	    inp.close();
 
 	    // Write the output to a file
-	    FileOutputStream fileOut = new FileOutputStream("test5.xls");
+	    FileOutputStream fileOut = new FileOutputStream("my500.xls");
 	    wb.write(fileOut);
 	    fileOut.close();
 	 	

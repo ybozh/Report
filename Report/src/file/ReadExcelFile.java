@@ -1,7 +1,10 @@
 package file;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+
+import javax.swing.JOptionPane;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -9,14 +12,13 @@ import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellReference;
-import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 
 public class ReadExcelFile {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		String str = "test.xls";
+		String str = "my5.xls";
 		
 		FileInputStream fis = new FileInputStream(str);
 		Workbook wb = new HSSFWorkbook(fis);
